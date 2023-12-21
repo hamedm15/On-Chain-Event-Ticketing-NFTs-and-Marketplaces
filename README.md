@@ -1,7 +1,13 @@
 # Distributed Ledgers Coursework
+By Hamed Mohammed
 
-#### *By Hamed Mohammed*
+## Contracts
 
+- [TicketNFT Contract](src/contracts/TicketNFT.sol)
+- [Primary Marketplace Contract](src/contracts/PrimaryMarket.sol)
+- [Secondary Marketplace Contract](src/contracts/SecondaryMarket.sol)
+- [Purchase Token Contract](src/contracts/PurchaseToken.sol) *(unchanged)*
+  
 ## Additional Information
 
 - The Expiry Date is set when the NFT contract is deloyed and is not tied to the time each Ticket is minted.
@@ -17,13 +23,6 @@
 
   - Outbid by another party
   - Ticket is delisted from auction
-
-## Contracts
-
-- [TicketNFT Contract](src/contracts/TicketNFT.sol)
-- [Primary Marketplace Contract](src/contracts/PrimaryMarket.sol)
-- [Secondary Marketplace Contract](src/contracts/SecondaryMarket.sol)
-- [Purchase Token Contract](src/contracts/PurchaseToken.sol) *(unchanged)*
 
 ## Test Suites
 
