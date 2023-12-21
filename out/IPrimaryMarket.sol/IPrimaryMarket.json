@@ -1,0 +1,1127 @@
+{
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "creator",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "ticketCollection",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "eventName",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "price",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "maxNumberOfTickets",
+          "type": "uint256"
+        }
+      ],
+      "name": "EventCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "holder",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "ticketCollection",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "ticketId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "holderName",
+          "type": "string"
+        }
+      ],
+      "name": "Purchase",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "eventName",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "price",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "maxNumberOfTickets",
+          "type": "uint256"
+        }
+      ],
+      "name": "createNewEvent",
+      "outputs": [
+        {
+          "internalType": "contract ITicketNFT",
+          "name": "ticketCollection",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "ticketCollection",
+          "type": "address"
+        }
+      ],
+      "name": "getPrice",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "price",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "ticketCollection",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "holderName",
+          "type": "string"
+        }
+      ],
+      "name": "purchase",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "createNewEvent(string,uint256,uint256)": "a5cd54d4",
+    "getPrice(address)": "41976e09",
+    "purchase(address,string)": "3a1b1d57"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.10+commit.fc410830\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"creator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"ticketCollection\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"eventName\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"price\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maxNumberOfTickets\",\"type\":\"uint256\"}],\"name\":\"EventCreated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"holder\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"ticketCollection\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"ticketId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"holderName\",\"type\":\"string\"}],\"name\":\"Purchase\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"eventName\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"price\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxNumberOfTickets\",\"type\":\"uint256\"}],\"name\":\"createNewEvent\",\"outputs\":[{\"internalType\":\"contract ITicketNFT\",\"name\":\"ticketCollection\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"ticketCollection\",\"type\":\"address\"}],\"name\":\"getPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"price\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"ticketCollection\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"holderName\",\"type\":\"string\"}],\"name\":\"purchase\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Required interface for the primary market. The primary market is the first point of sale for tickets. It is responsible for minting tickets and transferring them to the purchaser. The NFT to be minted is an implementation of the ITicketNFT interface and should be created (i.e. deployed) when a new event NFT collection is created In this implementation, the purchase price and the maximum number of tickets is set when an event NFT collection is created The purchase token is an ERC20 token that is specified when the contract is deployed.\",\"events\":{\"EventCreated(address,address,string,uint256,uint256)\":{\"details\":\"Emitted when a purchase by `holder` occurs, with `holderName` specified.\"},\"Purchase(address,address,uint256,string)\":{\"details\":\"Emitted when a purchase by `holder` occurs, with `holderName` specified.\"}},\"kind\":\"dev\",\"methods\":{\"createNewEvent(string,uint256,uint256)\":{\"params\":{\"eventName\":\"is the name of the event to create\",\"maxNumberOfTickets\":\"is the maximum number of tickets that can be created for this event\",\"price\":\"is the price of a single ticket for this event\"}},\"getPrice(address)\":{\"params\":{\"ticketCollection\":\"the collection from which to get the price\"},\"returns\":{\"price\":\"of a ticket for the event associated with `ticketCollection`\"}},\"purchase(address,string)\":{\"details\":\"Takes the initial NFT token holder's name as a string input and transfers ERC20 tokens from the purchaser to the creator of the NFT collection\",\"params\":{\"holderName\":\"the name of the buyer\",\"ticketCollection\":\"the collection from which to buy the ticket\"},\"returns\":{\"id\":\"of the purchased ticket\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"purchase(address,string)\":{\"notice\":\"Allows a user to purchase a ticket from `ticketCollectionNFT`\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/interfaces/IPrimaryMarket.sol\":\"IPrimaryMarket\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\"]},\"sources\":{\"src/interfaces/IPrimaryMarket.sol\":{\"keccak256\":\"0xda141e12531014548d37dc095268009e4f38bece37cb6d740435fbbeb560922e\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://55d67f546a8de483fe01ebe24c1d58c9cf0575e2aa4279fc9876985247b9e9ee\",\"dweb:/ipfs/QmZrMugNGN1nn6FGDnYqdVn9Xj882x7yEFF9aXbJwqNA6Y\"]},\"src/interfaces/ITicketNFT.sol\":{\"keccak256\":\"0x681d6831ccb120d42d44f201a8b7160bd383e7dff37b099489c21f0082316036\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://6db545e611cda160092aae8fdde8cd70624181553300688bc74078cc11376640\",\"dweb:/ipfs/QmSLgoyug7UJCbG9ueGhX2xUMXZijHhuw6p7DUnYmW6jzn\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.10+commit.fc410830"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "creator",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "ticketCollection",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "string",
+              "name": "eventName",
+              "type": "string",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "price",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "uint256",
+              "name": "maxNumberOfTickets",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "EventCreated",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "holder",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "ticketCollection",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "ticketId",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "string",
+              "name": "holderName",
+              "type": "string",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "Purchase",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "string",
+              "name": "eventName",
+              "type": "string"
+            },
+            {
+              "internalType": "uint256",
+              "name": "price",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "maxNumberOfTickets",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "createNewEvent",
+          "outputs": [
+            {
+              "internalType": "contract ITicketNFT",
+              "name": "ticketCollection",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "ticketCollection",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getPrice",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "price",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "ticketCollection",
+              "type": "address"
+            },
+            {
+              "internalType": "string",
+              "name": "holderName",
+              "type": "string"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "purchase",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "createNewEvent(string,uint256,uint256)": {
+            "params": {
+              "eventName": "is the name of the event to create",
+              "maxNumberOfTickets": "is the maximum number of tickets that can be created for this event",
+              "price": "is the price of a single ticket for this event"
+            }
+          },
+          "getPrice(address)": {
+            "params": {
+              "ticketCollection": "the collection from which to get the price"
+            },
+            "returns": {
+              "price": "of a ticket for the event associated with `ticketCollection`"
+            }
+          },
+          "purchase(address,string)": {
+            "details": "Takes the initial NFT token holder's name as a string input and transfers ERC20 tokens from the purchaser to the creator of the NFT collection",
+            "params": {
+              "holderName": "the name of the buyer",
+              "ticketCollection": "the collection from which to buy the ticket"
+            },
+            "returns": {
+              "id": "of the purchased ticket"
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "purchase(address,string)": {
+            "notice": "Allows a user to purchase a ticket from `ticketCollectionNFT`"
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "forge-std/=lib/forge-std/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/interfaces/IPrimaryMarket.sol": "IPrimaryMarket"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/interfaces/IPrimaryMarket.sol": {
+        "keccak256": "0xda141e12531014548d37dc095268009e4f38bece37cb6d740435fbbeb560922e",
+        "urls": [
+          "bzz-raw://55d67f546a8de483fe01ebe24c1d58c9cf0575e2aa4279fc9876985247b9e9ee",
+          "dweb:/ipfs/QmZrMugNGN1nn6FGDnYqdVn9Xj882x7yEFF9aXbJwqNA6Y"
+        ],
+        "license": "UNLICENSED"
+      },
+      "src/interfaces/ITicketNFT.sol": {
+        "keccak256": "0x681d6831ccb120d42d44f201a8b7160bd383e7dff37b099489c21f0082316036",
+        "urls": [
+          "bzz-raw://6db545e611cda160092aae8fdde8cd70624181553300688bc74078cc11376640",
+          "dweb:/ipfs/QmSLgoyug7UJCbG9ueGhX2xUMXZijHhuw6p7DUnYmW6jzn"
+        ],
+        "license": "UNLICENSED"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/interfaces/IPrimaryMarket.sol",
+    "id": 1266,
+    "exportedSymbols": {
+      "IPrimaryMarket": [
+        1265
+      ],
+      "ITicketNFT": [
+        1492
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "40:2540:3",
+    "nodes": [
+      {
+        "id": 1206,
+        "nodeType": "PragmaDirective",
+        "src": "40:24:3",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".10"
+        ]
+      },
+      {
+        "id": 1208,
+        "nodeType": "ImportDirective",
+        "src": "68:44:3",
+        "nodes": [],
+        "absolutePath": "src/interfaces/ITicketNFT.sol",
+        "file": "./ITicketNFT.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 1266,
+        "sourceUnit": 1493,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 1207,
+              "name": "ITicketNFT",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "src": "76:10:3",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 1265,
+        "nodeType": "ContractDefinition",
+        "src": "704:1874:3",
+        "nodes": [
+          {
+            "id": 1222,
+            "nodeType": "EventDefinition",
+            "src": "840:191:3",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 1210,
+              "nodeType": "StructuredDocumentation",
+              "src": "736:98:3",
+              "text": " @dev Emitted when a purchase by `holder` occurs, with `holderName` specified."
+            },
+            "name": "EventCreated",
+            "nameLocation": "846:12:3",
+            "parameters": {
+              "id": 1221,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1212,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "creator",
+                  "nameLocation": "885:7:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1222,
+                  "src": "869:23:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1211,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "869:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1214,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "ticketCollection",
+                  "nameLocation": "919:16:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1222,
+                  "src": "903:32:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1213,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "903:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1216,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "eventName",
+                  "nameLocation": "953:9:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1222,
+                  "src": "946:16:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1215,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "946:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1218,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "price",
+                  "nameLocation": "981:5:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1222,
+                  "src": "973:13:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1217,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "973:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1220,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "maxNumberOfTickets",
+                  "nameLocation": "1005:18:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1222,
+                  "src": "997:26:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1219,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "997:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "858:172:3"
+            }
+          },
+          {
+            "id": 1233,
+            "nodeType": "EventDefinition",
+            "src": "1143:153:3",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 1223,
+              "nodeType": "StructuredDocumentation",
+              "src": "1039:98:3",
+              "text": " @dev Emitted when a purchase by `holder` occurs, with `holderName` specified."
+            },
+            "name": "Purchase",
+            "nameLocation": "1149:8:3",
+            "parameters": {
+              "id": 1232,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1225,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "holder",
+                  "nameLocation": "1184:6:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1233,
+                  "src": "1168:22:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1224,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1168:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1227,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "ticketCollection",
+                  "nameLocation": "1217:16:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1233,
+                  "src": "1201:32:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1226,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1201:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1229,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "ticketId",
+                  "nameLocation": "1252:8:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1233,
+                  "src": "1244:16:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1228,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1244:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1231,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "holderName",
+                  "nameLocation": "1278:10:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1233,
+                  "src": "1271:17:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1230,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1271:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1157:138:3"
+            }
+          },
+          {
+            "id": 1246,
+            "nodeType": "FunctionDefinition",
+            "src": "1560:173:3",
+            "nodes": [],
+            "documentation": {
+              "id": 1234,
+              "nodeType": "StructuredDocumentation",
+              "src": "1304:250:3",
+              "text": " @param eventName is the name of the event to create\n @param price is the price of a single ticket for this event\n @param maxNumberOfTickets is the maximum number of tickets that can be created for this event"
+            },
+            "functionSelector": "a5cd54d4",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createNewEvent",
+            "nameLocation": "1569:14:3",
+            "parameters": {
+              "id": 1241,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1236,
+                  "mutability": "mutable",
+                  "name": "eventName",
+                  "nameLocation": "1608:9:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1246,
+                  "src": "1594:23:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1235,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1594:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1238,
+                  "mutability": "mutable",
+                  "name": "price",
+                  "nameLocation": "1636:5:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1246,
+                  "src": "1628:13:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1237,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1628:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1240,
+                  "mutability": "mutable",
+                  "name": "maxNumberOfTickets",
+                  "nameLocation": "1660:18:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1246,
+                  "src": "1652:26:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1239,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1652:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1583:102:3"
+            },
+            "returnParameters": {
+              "id": 1245,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1244,
+                  "mutability": "mutable",
+                  "name": "ticketCollection",
+                  "nameLocation": "1715:16:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1246,
+                  "src": "1704:27:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ITicketNFT_$1492",
+                    "typeString": "contract ITicketNFT"
+                  },
+                  "typeName": {
+                    "id": 1243,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 1242,
+                      "name": "ITicketNFT",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 1492,
+                      "src": "1704:10:3"
+                    },
+                    "referencedDeclaration": 1492,
+                    "src": "1704:10:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ITicketNFT_$1492",
+                      "typeString": "contract ITicketNFT"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1703:29:3"
+            },
+            "scope": 1265,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 1256,
+            "nodeType": "FunctionDefinition",
+            "src": "2168:125:3",
+            "nodes": [],
+            "documentation": {
+              "id": 1247,
+              "nodeType": "StructuredDocumentation",
+              "src": "1741:421:3",
+              "text": " @notice Allows a user to purchase a ticket from `ticketCollectionNFT`\n @dev Takes the initial NFT token holder's name as a string input\n and transfers ERC20 tokens from the purchaser to the creator of the NFT collection\n @param ticketCollection the collection from which to buy the ticket\n @param holderName the name of the buyer\n @return id of the purchased ticket"
+            },
+            "functionSelector": "3a1b1d57",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "purchase",
+            "nameLocation": "2177:8:3",
+            "parameters": {
+              "id": 1252,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1249,
+                  "mutability": "mutable",
+                  "name": "ticketCollection",
+                  "nameLocation": "2204:16:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1256,
+                  "src": "2196:24:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1248,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2196:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1251,
+                  "mutability": "mutable",
+                  "name": "holderName",
+                  "nameLocation": "2245:10:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1256,
+                  "src": "2231:24:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1250,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2231:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2185:77:3"
+            },
+            "returnParameters": {
+              "id": 1255,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1254,
+                  "mutability": "mutable",
+                  "name": "id",
+                  "nameLocation": "2289:2:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1256,
+                  "src": "2281:10:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1253,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2281:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2280:12:3"
+            },
+            "scope": 1265,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 1264,
+            "nodeType": "FunctionDefinition",
+            "src": "2477:98:3",
+            "nodes": [],
+            "documentation": {
+              "id": 1257,
+              "nodeType": "StructuredDocumentation",
+              "src": "2301:170:3",
+              "text": " @param ticketCollection the collection from which to get the price\n @return price of a ticket for the event associated with `ticketCollection`"
+            },
+            "functionSelector": "41976e09",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getPrice",
+            "nameLocation": "2486:8:3",
+            "parameters": {
+              "id": 1260,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1259,
+                  "mutability": "mutable",
+                  "name": "ticketCollection",
+                  "nameLocation": "2513:16:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1264,
+                  "src": "2505:24:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1258,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2505:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2494:42:3"
+            },
+            "returnParameters": {
+              "id": 1263,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1262,
+                  "mutability": "mutable",
+                  "name": "price",
+                  "nameLocation": "2568:5:3",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1264,
+                  "src": "2560:13:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1261,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2560:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2559:15:3"
+            },
+            "scope": 1265,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IPrimaryMarket",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 1209,
+          "nodeType": "StructuredDocumentation",
+          "src": "116:586:3",
+          "text": " @dev Required interface for the primary market.\n The primary market is the first point of sale for tickets.\n It is responsible for minting tickets and transferring them to the purchaser.\n The NFT to be minted is an implementation of the ITicketNFT interface and should be created (i.e. deployed)\n when a new event NFT collection is created\n In this implementation, the purchase price and the maximum number of tickets\n is set when an event NFT collection is created\n The purchase token is an ERC20 token that is specified when the contract is deployed."
+        },
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          1265
+        ],
+        "name": "IPrimaryMarket",
+        "nameLocation": "714:14:3",
+        "scope": 1266,
+        "usedErrors": []
+      }
+    ],
+    "license": "UNLICENSED"
+  },
+  "id": 3
+}

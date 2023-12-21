@@ -1,0 +1,1870 @@
+{
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "bidder",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "ticketCollection",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "ticketID",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "bidAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "newName",
+          "type": "string"
+        }
+      ],
+      "name": "BidAccepted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "bidder",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "ticketCollection",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "ticketID",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "bidAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "newName",
+          "type": "string"
+        }
+      ],
+      "name": "BidSubmitted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "ticketCollection",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "ticketID",
+          "type": "uint256"
+        }
+      ],
+      "name": "Delisting",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "holder",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "ticketCollection",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "ticketID",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "price",
+          "type": "uint256"
+        }
+      ],
+      "name": "Listing",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "ticketCollection",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "ticketID",
+          "type": "uint256"
+        }
+      ],
+      "name": "acceptBid",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "ticketCollection",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "ticketID",
+          "type": "uint256"
+        }
+      ],
+      "name": "delistTicket",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "ticketCollection",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "ticketId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getHighestBid",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "ticketCollection",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "ticketId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getHighestBidder",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "ticketCollection",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "ticketID",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "price",
+          "type": "uint256"
+        }
+      ],
+      "name": "listTicket",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "ticketCollection",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "ticketID",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "bidAmount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        }
+      ],
+      "name": "submitBid",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "acceptBid(address,uint256)": "955a5a76",
+    "delistTicket(address,uint256)": "f489b89a",
+    "getHighestBid(address,uint256)": "8226508d",
+    "getHighestBidder(address,uint256)": "a670a9b4",
+    "listTicket(address,uint256,uint256)": "1d66b15c",
+    "submitBid(address,uint256,uint256,string)": "793bba6c"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.10+commit.fc410830\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"ticketCollection\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"ticketID\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bidAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"newName\",\"type\":\"string\"}],\"name\":\"BidAccepted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"ticketCollection\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"ticketID\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bidAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"newName\",\"type\":\"string\"}],\"name\":\"BidSubmitted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"ticketCollection\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"ticketID\",\"type\":\"uint256\"}],\"name\":\"Delisting\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"holder\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"ticketCollection\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"ticketID\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"price\",\"type\":\"uint256\"}],\"name\":\"Listing\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"ticketCollection\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"ticketID\",\"type\":\"uint256\"}],\"name\":\"acceptBid\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"ticketCollection\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"ticketID\",\"type\":\"uint256\"}],\"name\":\"delistTicket\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"ticketCollection\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"ticketId\",\"type\":\"uint256\"}],\"name\":\"getHighestBid\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"ticketCollection\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"ticketId\",\"type\":\"uint256\"}],\"name\":\"getHighestBidder\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"ticketCollection\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"ticketID\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"price\",\"type\":\"uint256\"}],\"name\":\"listTicket\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"ticketCollection\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"ticketID\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"bidAmount\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"name\":\"submitBid\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Required interface for the secondary market. The secondary market is the point of sale for tickets after they have been initially purchased from the primary market\",\"events\":{\"BidAccepted(address,address,uint256,uint256,string)\":{\"details\":\"Event emitted when a bid has been submitted for the ticket\"},\"BidSubmitted(address,address,uint256,uint256,string)\":{\"details\":\"Event emitted when a bid has been submitted for the ticket\"},\"Delisting(address,uint256)\":{\"details\":\"Event emitted when a ticket is delisted\"},\"Listing(address,address,uint256,uint256)\":{\"details\":\"Event emitted when a new ticket listing is created\"}},\"kind\":\"dev\",\"methods\":{\"listTicket(address,uint256,uint256)\":{\"details\":\"This method lists a ticket with `ticketID` for sale by transferring the ticket such that it is held by this contract. Only the current owner of a specific ticket is able to list that ticket on the secondary market. The purchase `price` is specified in an amount of `PurchaseToken`. Note: Only non-expired and unused tickets can be listed\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"delistTicket(address,uint256)\":{\"notice\":\"This method delists a previously listed ticket of `ticketCollection` with `ticketID`. Only the account that listed the ticket may delist the ticket. The ticket should be transferred back to msg.sender, i.e., the lister, and escrowed bid funds should be return to the bidder, if any.\"},\"getHighestBid(address,uint256)\":{\"notice\":\"Returns the current highest bid for the ticket from `ticketCollection` with `ticketID`\"},\"getHighestBidder(address,uint256)\":{\"notice\":\"Returns the current highest bidder for the ticket from `ticketCollection` with `ticketID`\"},\"submitBid(address,uint256,uint256,string)\":{\"notice\":\"This method allows the msg.sender to submit a bid for the ticket from `ticketCollection` with `ticketID` The `bidAmount` should be kept in escrow by the contract until the bid is accepted, a higher bid is made, or the ticket is delisted. If this is not the first bid for this ticket, `bidAmount` must be strictly higher that the previous bid. `name` gives the new name that should be stated on the ticket when it is purchased. Note: Bid can only be made on non-expired and unused tickets\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/interfaces/ISecondaryMarket.sol\":\"ISecondaryMarket\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\"]},\"sources\":{\"src/interfaces/ISecondaryMarket.sol\":{\"keccak256\":\"0xe68f733358c0f145f22fd46fe072217c30fa31d21e36e0d7597b7971fe6027af\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://63571b64c3bacbdcd1af967c8aff6f0b5f81c5253a4bbec31f561d57c1b0fbad\",\"dweb:/ipfs/Qme52jKUa6UXeS3wNgcwu9tzoeDsTiNq5k7kxHD2ioYqYu\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.10+commit.fc410830"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "bidder",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "ticketCollection",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "ticketID",
+              "type": "uint256",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "bidAmount",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "string",
+              "name": "newName",
+              "type": "string",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "BidAccepted",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "bidder",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "ticketCollection",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "ticketID",
+              "type": "uint256",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "bidAmount",
+              "type": "uint256",
+              "indexed": false
+            },
+            {
+              "internalType": "string",
+              "name": "newName",
+              "type": "string",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "BidSubmitted",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "ticketCollection",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "ticketID",
+              "type": "uint256",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "Delisting",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "holder",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "ticketCollection",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "ticketID",
+              "type": "uint256",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "price",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "Listing",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "ticketCollection",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "ticketID",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "acceptBid"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "ticketCollection",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "ticketID",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "delistTicket"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "ticketCollection",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "ticketId",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getHighestBid",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "ticketCollection",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "ticketId",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getHighestBidder",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "ticketCollection",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "ticketID",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "price",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "listTicket"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "ticketCollection",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "ticketID",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "bidAmount",
+              "type": "uint256"
+            },
+            {
+              "internalType": "string",
+              "name": "name",
+              "type": "string"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "submitBid"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "listTicket(address,uint256,uint256)": {
+            "details": "This method lists a ticket with `ticketID` for sale by transferring the ticket such that it is held by this contract. Only the current owner of a specific ticket is able to list that ticket on the secondary market. The purchase `price` is specified in an amount of `PurchaseToken`. Note: Only non-expired and unused tickets can be listed"
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "delistTicket(address,uint256)": {
+            "notice": "This method delists a previously listed ticket of `ticketCollection` with `ticketID`. Only the account that listed the ticket may delist the ticket. The ticket should be transferred back to msg.sender, i.e., the lister, and escrowed bid funds should be return to the bidder, if any."
+          },
+          "getHighestBid(address,uint256)": {
+            "notice": "Returns the current highest bid for the ticket from `ticketCollection` with `ticketID`"
+          },
+          "getHighestBidder(address,uint256)": {
+            "notice": "Returns the current highest bidder for the ticket from `ticketCollection` with `ticketID`"
+          },
+          "submitBid(address,uint256,uint256,string)": {
+            "notice": "This method allows the msg.sender to submit a bid for the ticket from `ticketCollection` with `ticketID` The `bidAmount` should be kept in escrow by the contract until the bid is accepted, a higher bid is made, or the ticket is delisted. If this is not the first bid for this ticket, `bidAmount` must be strictly higher that the previous bid. `name` gives the new name that should be stated on the ticket when it is purchased. Note: Bid can only be made on non-expired and unused tickets"
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "forge-std/=lib/forge-std/src/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/interfaces/ISecondaryMarket.sol": "ISecondaryMarket"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/interfaces/ISecondaryMarket.sol": {
+        "keccak256": "0xe68f733358c0f145f22fd46fe072217c30fa31d21e36e0d7597b7971fe6027af",
+        "urls": [
+          "bzz-raw://63571b64c3bacbdcd1af967c8aff6f0b5f81c5253a4bbec31f561d57c1b0fbad",
+          "dweb:/ipfs/Qme52jKUa6UXeS3wNgcwu9tzoeDsTiNq5k7kxHD2ioYqYu"
+        ],
+        "license": "UNLICENSED"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/interfaces/ISecondaryMarket.sol",
+    "id": 1371,
+    "exportedSymbols": {
+      "ISecondaryMarket": [
+        1370
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "40:4110:4",
+    "nodes": [
+      {
+        "id": 1267,
+        "nodeType": "PragmaDirective",
+        "src": "40:24:4",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".10"
+        ]
+      },
+      {
+        "id": 1370,
+        "nodeType": "ContractDefinition",
+        "src": "255:3893:4",
+        "nodes": [
+          {
+            "id": 1279,
+            "nodeType": "EventDefinition",
+            "src": "371:156:4",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 1269,
+              "nodeType": "StructuredDocumentation",
+              "src": "289:76:4",
+              "text": " @dev Event emitted when a new ticket listing is created"
+            },
+            "name": "Listing",
+            "nameLocation": "377:7:4",
+            "parameters": {
+              "id": 1278,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1271,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "holder",
+                  "nameLocation": "411:6:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1279,
+                  "src": "395:22:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1270,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "395:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1273,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "ticketCollection",
+                  "nameLocation": "444:16:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1279,
+                  "src": "428:32:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1272,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "428:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1275,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "ticketID",
+                  "nameLocation": "487:8:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1279,
+                  "src": "471:24:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1274,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "471:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1277,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "price",
+                  "nameLocation": "514:5:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1279,
+                  "src": "506:13:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1276,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "506:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "384:142:4"
+            }
+          },
+          {
+            "id": 1292,
+            "nodeType": "EventDefinition",
+            "src": "625:190:4",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 1280,
+              "nodeType": "StructuredDocumentation",
+              "src": "535:84:4",
+              "text": " @dev Event emitted when a bid has been submitted for the ticket"
+            },
+            "name": "BidSubmitted",
+            "nameLocation": "631:12:4",
+            "parameters": {
+              "id": 1291,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1282,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "bidder",
+                  "nameLocation": "670:6:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1292,
+                  "src": "654:22:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1281,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "654:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1284,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "ticketCollection",
+                  "nameLocation": "703:16:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1292,
+                  "src": "687:32:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1283,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "687:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1286,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "ticketID",
+                  "nameLocation": "746:8:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1292,
+                  "src": "730:24:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1285,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "730:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1288,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "bidAmount",
+                  "nameLocation": "773:9:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1292,
+                  "src": "765:17:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1287,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "765:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1290,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "newName",
+                  "nameLocation": "800:7:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1292,
+                  "src": "793:14:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1289,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "793:6:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "643:171:4"
+            }
+          },
+          {
+            "id": 1305,
+            "nodeType": "EventDefinition",
+            "src": "913:189:4",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 1293,
+              "nodeType": "StructuredDocumentation",
+              "src": "823:84:4",
+              "text": " @dev Event emitted when a bid has been submitted for the ticket"
+            },
+            "name": "BidAccepted",
+            "nameLocation": "919:11:4",
+            "parameters": {
+              "id": 1304,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1295,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "bidder",
+                  "nameLocation": "957:6:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1305,
+                  "src": "941:22:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1294,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "941:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1297,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "ticketCollection",
+                  "nameLocation": "990:16:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1305,
+                  "src": "974:32:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1296,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "974:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1299,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "ticketID",
+                  "nameLocation": "1033:8:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1305,
+                  "src": "1017:24:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1298,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1017:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1301,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "bidAmount",
+                  "nameLocation": "1060:9:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1305,
+                  "src": "1052:17:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1300,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1052:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1303,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "newName",
+                  "nameLocation": "1087:7:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1305,
+                  "src": "1080:14:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1302,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1080:6:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "930:171:4"
+            }
+          },
+          {
+            "id": 1312,
+            "nodeType": "EventDefinition",
+            "src": "1181:76:4",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 1306,
+              "nodeType": "StructuredDocumentation",
+              "src": "1110:65:4",
+              "text": " @dev Event emitted when a ticket is delisted"
+            },
+            "name": "Delisting",
+            "nameLocation": "1187:9:4",
+            "parameters": {
+              "id": 1311,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1308,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "ticketCollection",
+                  "nameLocation": "1213:16:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1312,
+                  "src": "1197:32:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1307,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1197:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1310,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "ticketID",
+                  "nameLocation": "1247:8:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1312,
+                  "src": "1231:24:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1309,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1231:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1196:60:4"
+            }
+          },
+          {
+            "id": 1322,
+            "nodeType": "FunctionDefinition",
+            "src": "1666:122:4",
+            "nodes": [],
+            "documentation": {
+              "id": 1313,
+              "nodeType": "StructuredDocumentation",
+              "src": "1265:395:4",
+              "text": " @dev This method lists a ticket with `ticketID` for sale by transferring the ticket\n such that it is held by this contract. Only the current owner of a specific\n ticket is able to list that ticket on the secondary market. The purchase\n `price` is specified in an amount of `PurchaseToken`.\n Note: Only non-expired and unused tickets can be listed"
+            },
+            "functionSelector": "1d66b15c",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "listTicket",
+            "nameLocation": "1675:10:4",
+            "parameters": {
+              "id": 1320,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1315,
+                  "mutability": "mutable",
+                  "name": "ticketCollection",
+                  "nameLocation": "1704:16:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1322,
+                  "src": "1696:24:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1314,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1696:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1317,
+                  "mutability": "mutable",
+                  "name": "ticketID",
+                  "nameLocation": "1739:8:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1322,
+                  "src": "1731:16:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1316,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1731:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1319,
+                  "mutability": "mutable",
+                  "name": "price",
+                  "nameLocation": "1766:5:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1322,
+                  "src": "1758:13:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1318,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1758:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1685:93:4"
+            },
+            "returnParameters": {
+              "id": 1321,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1787:0:4"
+            },
+            "scope": 1370,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 1334,
+            "nodeType": "FunctionDefinition",
+            "src": "2350:156:4",
+            "nodes": [],
+            "documentation": {
+              "id": 1323,
+              "nodeType": "StructuredDocumentation",
+              "src": "1796:548:4",
+              "text": "@notice This method allows the msg.sender to submit a bid for the ticket from `ticketCollection` with `ticketID`\n The `bidAmount` should be kept in escrow by the contract until the bid is accepted, a higher bid is made,\n or the ticket is delisted.\n If this is not the first bid for this ticket, `bidAmount` must be strictly higher that the previous bid.\n `name` gives the new name that should be stated on the ticket when it is purchased.\n Note: Bid can only be made on non-expired and unused tickets"
+            },
+            "functionSelector": "793bba6c",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "submitBid",
+            "nameLocation": "2359:9:4",
+            "parameters": {
+              "id": 1332,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1325,
+                  "mutability": "mutable",
+                  "name": "ticketCollection",
+                  "nameLocation": "2387:16:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1334,
+                  "src": "2379:24:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1324,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2379:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1327,
+                  "mutability": "mutable",
+                  "name": "ticketID",
+                  "nameLocation": "2422:8:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1334,
+                  "src": "2414:16:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1326,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2414:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1329,
+                  "mutability": "mutable",
+                  "name": "bidAmount",
+                  "nameLocation": "2449:9:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1334,
+                  "src": "2441:17:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1328,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2441:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1331,
+                  "mutability": "mutable",
+                  "name": "name",
+                  "nameLocation": "2485:4:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1334,
+                  "src": "2469:20:4",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1330,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2469:6:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2368:128:4"
+            },
+            "returnParameters": {
+              "id": 1333,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2505:0:4"
+            },
+            "scope": 1370,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 1344,
+            "nodeType": "FunctionDefinition",
+            "src": "2627:124:4",
+            "nodes": [],
+            "documentation": {
+              "id": 1335,
+              "nodeType": "StructuredDocumentation",
+              "src": "2514:107:4",
+              "text": " Returns the current highest bid for the ticket from `ticketCollection` with `ticketID`"
+            },
+            "functionSelector": "8226508d",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getHighestBid",
+            "nameLocation": "2636:13:4",
+            "parameters": {
+              "id": 1340,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1337,
+                  "mutability": "mutable",
+                  "name": "ticketCollection",
+                  "nameLocation": "2668:16:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1344,
+                  "src": "2660:24:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1336,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2660:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1339,
+                  "mutability": "mutable",
+                  "name": "ticketId",
+                  "nameLocation": "2703:8:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1344,
+                  "src": "2695:16:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1338,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2695:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2649:69:4"
+            },
+            "returnParameters": {
+              "id": 1343,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1342,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1344,
+                  "src": "2742:7:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1341,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2742:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2741:9:4"
+            },
+            "scope": 1370,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 1354,
+            "nodeType": "FunctionDefinition",
+            "src": "2875:127:4",
+            "nodes": [],
+            "documentation": {
+              "id": 1345,
+              "nodeType": "StructuredDocumentation",
+              "src": "2759:110:4",
+              "text": " Returns the current highest bidder for the ticket from `ticketCollection` with `ticketID`"
+            },
+            "functionSelector": "a670a9b4",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getHighestBidder",
+            "nameLocation": "2884:16:4",
+            "parameters": {
+              "id": 1350,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1347,
+                  "mutability": "mutable",
+                  "name": "ticketCollection",
+                  "nameLocation": "2919:16:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1354,
+                  "src": "2911:24:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1346,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2911:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1349,
+                  "mutability": "mutable",
+                  "name": "ticketId",
+                  "nameLocation": "2954:8:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1354,
+                  "src": "2946:16:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1348,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2946:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2900:69:4"
+            },
+            "returnParameters": {
+              "id": 1353,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1352,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1354,
+                  "src": "2993:7:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1351,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2993:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2992:9:4"
+            },
+            "scope": 1370,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 1361,
+            "nodeType": "FunctionDefinition",
+            "src": "3665:72:4",
+            "nodes": [],
+            "functionSelector": "955a5a76",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "acceptBid",
+            "nameLocation": "3674:9:4",
+            "parameters": {
+              "id": 1359,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1356,
+                  "mutability": "mutable",
+                  "name": "ticketCollection",
+                  "nameLocation": "3692:16:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1361,
+                  "src": "3684:24:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1355,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3684:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1358,
+                  "mutability": "mutable",
+                  "name": "ticketID",
+                  "nameLocation": "3718:8:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1361,
+                  "src": "3710:16:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1357,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "3710:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "3683:44:4"
+            },
+            "returnParameters": {
+              "id": 1360,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "3736:0:4"
+            },
+            "scope": 1370,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 1369,
+            "nodeType": "FunctionDefinition",
+            "src": "4070:75:4",
+            "nodes": [],
+            "documentation": {
+              "id": 1362,
+              "nodeType": "StructuredDocumentation",
+              "src": "3745:319:4",
+              "text": "@notice This method delists a previously listed ticket of `ticketCollection` with `ticketID`. Only the account that\n listed the ticket may delist the ticket. The ticket should be transferred back\n to msg.sender, i.e., the lister, and escrowed bid funds should be return to the bidder, if any."
+            },
+            "functionSelector": "f489b89a",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "delistTicket",
+            "nameLocation": "4079:12:4",
+            "parameters": {
+              "id": 1367,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1364,
+                  "mutability": "mutable",
+                  "name": "ticketCollection",
+                  "nameLocation": "4100:16:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1369,
+                  "src": "4092:24:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1363,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4092:7:4",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 1366,
+                  "mutability": "mutable",
+                  "name": "ticketID",
+                  "nameLocation": "4126:8:4",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 1369,
+                  "src": "4118:16:4",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1365,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4118:7:4",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4091:44:4"
+            },
+            "returnParameters": {
+              "id": 1368,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4144:0:4"
+            },
+            "scope": 1370,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ISecondaryMarket",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 1268,
+          "nodeType": "StructuredDocumentation",
+          "src": "68:185:4",
+          "text": " @dev Required interface for the secondary market.\n The secondary market is the point of sale for tickets after they have been initially purchased from the primary market"
+        },
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          1370
+        ],
+        "name": "ISecondaryMarket",
+        "nameLocation": "265:16:4",
+        "scope": 1371,
+        "usedErrors": []
+      }
+    ],
+    "license": "UNLICENSED"
+  },
+  "id": 4
+}
