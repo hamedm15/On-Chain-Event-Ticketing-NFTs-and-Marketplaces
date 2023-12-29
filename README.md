@@ -1,5 +1,5 @@
 # On-Chain Event Ticketing: NFTs and Marketplaces in Solidity
-By Hamed Mohammed for educational purposes only.
+By Hamed Mohammed
 
 ## Overview
 This project develops a foundational on-chain ticketing service using Solidity, focusing on NFT-based ticket issuance and marketplace functionality. It integrates primary and secondary marketplaces for ticket creation, purchase, and bidding, with adherence to ERC721 and ERC20 standards. The implementation encompasses ticket metadata management, including event names, unique IDs, holder information, and validity timestamps. Additionally, it features admin-controlled ticket usage flags and efficient transaction handling serveing as a conceptual model, demonstrating basic blockchain ticketing functionalities.
@@ -125,3 +125,7 @@ Breakdown of tests for each function:
 |                      	| "Event TicketNFT   expired"                                                 	| _testSetUsedAndIsExpiredOrUsed_                  	|     PASS    	|
 | isExpiredOrUsed      	| "Ticket does not exist"                                                     	| _testTicketDoesNotExist_                         	|     PASS    	|
 | holderNameOf         	| "Ticket does not exist"                                                     	| _testTicketDoesNotExist_                         	|     PASS    	|
+
+## About
+
+Principles of Distributed Ledgers: Smart Contract Coursework for 2023, Imperial College London.
