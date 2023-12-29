@@ -1,5 +1,15 @@
-# Distributed Ledgers Coursework
-By Hamed Mohammed
+# On-Chain Event Ticketing: NFTs and Marketplaces in Solidity
+By Hamed Mohammed for educational purposes only.
+
+## Overview
+This project develops a foundational on-chain ticketing service using Solidity, focusing on NFT-based ticket issuance and marketplace functionality. It integrates primary and secondary marketplaces for ticket creation, purchase, and bidding, with adherence to ERC721 and ERC20 standards. The implementation encompasses ticket metadata management, including event names, unique IDs, holder information, and validity timestamps. Additionally, it features admin-controlled ticket usage flags and efficient transaction handling serveing as a conceptual model, demonstrating basic blockchain ticketing functionalities.
+Core components:
+1. a non-fungible token (NFT) contract for implementing ticket logic,
+2. a primary marketplace that allows users to create tickets (by deploying
+new instances of an NFT contract) and mint these tickets in exchange for
+an ERC20 token payment,
+3. a secondary marketplace that allows users to create bids for tickets listed
+for sale by current ticket holders.
 
 ## Contracts
 
